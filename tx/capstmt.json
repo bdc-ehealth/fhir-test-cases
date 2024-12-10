@@ -18,72 +18,31 @@
 	"fhirVersion": "$version$",
 	"format": ["application/fhir+json"],
 	"rest": [{
-      "$optional-properties$": ["security"],
 			"mode": "server",
-      "security": {
-        "$optional$": true
-      },
-			"resource": [{
-					"$optional-properties$": ["interaction", "searchParam", "searchInclude"],
+    "resource": [
+      {
 					"type": "CodeSystem",
-					"interaction": [{
-							"$optional$": true
-						}
-					],
-					"searchInclude": ["$string$"],
-					"searchParam": [{
-							"$optional$": true
-						}
-					],
 					"operation": [{
 							"name": "lookup",
 							"definition": "$url$"
-						}, {
-							"$optional$": true
-						}, {
+        },{
 							"name": "validate-code",
 							"definition": "$url$"
-						}
-					]
-				}, {
-					"$optional$": true,
-          "$optional-properties$": ["interaction", "searchParam", "searchInclude", "operation", "versioning", "readHistory"],
-					"type": "$token$",
-					"profile": "$url$",
-					"interaction": [{
-							"$optional$": true
-						}
-					],
-					"searchInclude": ["$string$"],
-          "versioning" : "$token$",
-          "readHistory": "$token$",
-          "searchParam" : [{
-            "$optional$": true
-          }],
-          "operation":[{
-            "$optional$": true
           }]
-				},  {
-					"$optional-properties$": ["searchParam", "searchInclude"],
+      },
+      {
 					"type": "ValueSet",
 					"interaction": [{
-							"$optional$": true,
-							"code": "$token$"
-						}, {
 							"code": "read"
-						}, {
+        },{
 							"code": "search-type"
-						}
-					],
-					"searchInclude": ["$string$"],
-					"searchParam": [{
-              "$optional$" : true
-						}
-					],
-					"operation": [{
+        }],
+        "operation": [
+          {
 							"name": "expand",
 							"definition": "$url$"
-						}, {
+          },
+          {
 							"name": "validate-code",
 							"definition": "$url$"
 						}
@@ -93,8 +52,7 @@
 			"operation": [{
 					"name": "versions",
 					"definition": "$url$"
-				}
-			]
-		}
-	]
+    }]
+  }]
 }
+
